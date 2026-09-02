@@ -49,6 +49,7 @@ jobs:
           buildozer -v android debug
         env:
           JAVA_HOME: /usr/lib/jvm/java-17-openjdk-amd64
+          APP_ANDROID_NDK: 25b
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
