@@ -1,13 +1,5 @@
-# Dependencias para ESCRITORIO (Windows / macOS / Linux):
-#   pip install -r requirements.txt
-#
-# Para el APK de Android NO se usa este archivo: se usa buildozer.spec.
-# pyttsx3 y supabase no compilan en Android; alli la voz es el TextToSpeech
-# nativo del telefono y los datos se guardan localmente.
-kivy>=2.3.0
-pillow>=10.0.0
-python-dotenv>=1.0.0
-
-# Solo escritorio (opcionales)
-pyttsx3>=2.90; platform_system != "Android"
-supabase>=2.0.0; platform_system != "Android"
+kivy
+pillow
+pyjnius
+certifi
+python-dotenv
