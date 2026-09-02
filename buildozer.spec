@@ -9,8 +9,7 @@ package.domain = org.ocupamor
 
 source.dir = .
 
-# Extensiones que SI se empaquetan dentro del APK (sin esto no entran
-# las imagenes del abecedario, iconos, corneta, etc.)
+# Extensiones que SI se empaquetan dentro del APK
 source.include_exts = py,png,jpg,jpeg,gif,atlas,kv,json,txt,ttf,otf,wav,mp3,ogg
 
 # Carpetas que se incluyen completas
@@ -23,28 +22,28 @@ source.exclude_patterns = .env,*.zip
 
 version = 1.0
 
-# IMPORTANTE: pyttsx3 y supabase NO compilan en Android.
-# En Android la voz usa el TextToSpeech nativo (via pyjnius) y los datos
-# se guardan localmente, por eso aqui no se incluyen.
-requirements = python3,kivy==2.3.0,pillow,android,pyjnius,certifi
+# CAMBIO 1: Se remueve la version fija ==2.3.0 de Kivy para evitar fallos de compilacion C/Cython
+requirements = python3,kivy,pillow,android,pyjnius,certifi
 
 orientation = portrait
 fullscreen = 0
 
-# Icono y pantalla de carga (opcional: coloca tus propias imagenes)
-#icon.filename = %(source.dir)s/assets/images/icon.png
-#presplash.filename = %(source.dir)s/assets/images/presplash.png
-
 # ---------------------------- Android ----------------------------
 android.permissions = INTERNET
-android.api = 34
+
+# CAMBIO 2: API 33 y NDK 25b garantizan maxima compatibilidad en GitHub Actions
+android.api = 33
 android.minapi = 24
+android.ndk = 25b
 android.ndk_api = 24
-android.archs = arm64-v8a, armeabi-v7a
+
+# CAMBIO 3: Compilar solo para arm64-v8a acelera la creacion y evita errores de arquitectura cruzada
+android.archs = arm64-v8a
+
 android.accept_sdk_license = True
 android.allow_backup = True
 
-# ---------------------------- iOS (opcional) ----------------------
+# ---------------------------- iOS ---------------------------------
 ios.kivy_ios_url = https://github.com/kivy/kivy-ios
 ios.kivy_ios_branch = master
 
