@@ -54,6 +54,7 @@ jobs:
         env:
           JAVA_HOME: /usr/lib/jvm/java-17-openjdk-amd64
           APP_ANDROID_NDK: 25b
+          PIP_NO_BINARY: "charset-normalizer"
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
