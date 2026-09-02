@@ -2,4 +2,3 @@ kivy
 pillow
 pyjnius
 certifi
-python-dotenv
