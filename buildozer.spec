@@ -22,7 +22,7 @@ source.exclude_patterns = .env,*.zip
 
 version = 1.0
 
-# Se agregan todas las librerias necesarias para que no dependa de requirements.txt
+# Requisitos unificados sin versiones fijas para p4a
 requirements = python3,kivy,pillow,android,pyjnius,certifi,python-dotenv
 
 orientation = portrait
@@ -31,13 +31,13 @@ fullscreen = 0
 # ---------------------------- Android ----------------------------
 android.permissions = INTERNET
 
-# API 33 y NDK 25b garantizan maxima compatibilidad en GitHub Actions
+# API 33 y NDK 25b para compatibilidad en GitHub Actions
 android.api = 33
 android.minapi = 24
 android.ndk = 25b
 android.ndk_api = 24
 
-# Compilar solo para arm64-v8a acelera la creacion y evita errores de arquitectura cruzada
+# Arquitectura unica para agilizar la ejecucion
 android.archs = arm64-v8a
 
 android.accept_sdk_license = True
