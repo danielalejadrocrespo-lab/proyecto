@@ -23,7 +23,7 @@ source.exclude_patterns = .env,*.zip
 version = 1.0
 
 # Requisitos unificados sin versiones fijas para p4a
-requirements = python3,kivy,pillow,android,pyjnius,certifi
+requirements = python3==3.10.11,kivy,pillow,android,pyjnius,certifi
 
 orientation = portrait
 fullscreen = 0
