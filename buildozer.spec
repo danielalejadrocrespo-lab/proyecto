@@ -22,8 +22,8 @@ source.exclude_patterns = .env,*.zip
 
 version = 1.0
 
-# CAMBIO 1: Se remueve la version fija ==2.3.0 de Kivy para evitar fallos de compilacion C/Cython
-requirements = python3,kivy,pillow,android,pyjnius,certifi
+# Se agregan todas las librerias necesarias para que no dependa de requirements.txt
+requirements = python3,kivy,pillow,android,pyjnius,certifi,python-dotenv
 
 orientation = portrait
 fullscreen = 0
@@ -31,13 +31,13 @@ fullscreen = 0
 # ---------------------------- Android ----------------------------
 android.permissions = INTERNET
 
-# CAMBIO 2: API 33 y NDK 25b garantizan maxima compatibilidad en GitHub Actions
+# API 33 y NDK 25b garantizan maxima compatibilidad en GitHub Actions
 android.api = 33
 android.minapi = 24
 android.ndk = 25b
 android.ndk_api = 24
 
-# CAMBIO 3: Compilar solo para arm64-v8a acelera la creacion y evita errores de arquitectura cruzada
+# Compilar solo para arm64-v8a acelera la creacion y evita errores de arquitectura cruzada
 android.archs = arm64-v8a
 
 android.accept_sdk_license = True
